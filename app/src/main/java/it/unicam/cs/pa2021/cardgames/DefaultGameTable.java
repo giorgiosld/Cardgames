@@ -16,7 +16,7 @@ public class DefaultGameTable implements TavoloDaGioco{
         this.numeroGiocatori = listPlayer.size();
         this.tipoDiGioco = tipologia;
     }
-
+1
     @Override
     public void chooseGame() {
         //da richiamare a fine partita
