@@ -27,7 +27,7 @@ public class DefaultGameTable implements TavoloDaGioco{
         if(mazzo == null) throw new NullPointerException();
         if(!this.tipoDiGioco.getTypeCards().equals(mazzo)) throw new IllegalArgumentException();
         int sizeMazzo = mazzo.size();
-        // 0. Verificare che il mazzo sia non-null; Nel caso NUllpointerException
+        // 0. Verificare che il mazzo sia non-null; Nel caso NullpointerException
         // 1. Verificare che il mazzo sia compatibile con il gioco scelto
         // 1. Ottenere le dimensioni del mazzo
 
