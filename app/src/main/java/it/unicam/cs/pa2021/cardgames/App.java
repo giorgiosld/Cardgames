@@ -12,3 +12,4 @@ public class App {
         System.out.println(new App().getGreeting());
     }
 }
+//test per evdere se git works fine
