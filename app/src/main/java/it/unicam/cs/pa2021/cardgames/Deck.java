@@ -3,7 +3,7 @@ package it.unicam.cs.pa2021.cardgames;
 /**
  * Interfaccia usata per rappresentare un generico mazzo su un tavolo da gioco
  */
-public interface Deck {
+public interface Deck<T> {
 
     /**
      * Mischia l'ordine delle carte
