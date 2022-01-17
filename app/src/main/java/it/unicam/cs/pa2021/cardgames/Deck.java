@@ -3,7 +3,7 @@ package it.unicam.cs.pa2021.cardgames;
 /**
  * Interfaccia usata per rappresentare un generico mazzo su un tavolo da gioco
  */
-public interface Mazzo {
+public interface Deck {
 
     /**
      * Mischia l'ordine delle carte
@@ -13,17 +13,17 @@ public interface Mazzo {
     /**
      * Pesca una carta dal mazzo
      *
-     * @param giocatore il giocatore che deve pescare
+     * @param player il giocatore che deve pescare
      * @return la carta pescata
      */
-    Carta pescare(Giocatore giocatore);
+    Card pescare(Player player);
 
     /**
      * Restituisce il tipo di mazzo che si sta usando
      *
      * @return tipo di mazzo
      */
-    TipologiaMazzo tipo();
+    TypeDeck tipo();
 
     /**
      * Restituisce il numero di carte rimaste all'interno del mazzo

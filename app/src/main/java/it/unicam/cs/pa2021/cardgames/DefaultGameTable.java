@@ -7,14 +7,14 @@ import java.util.List;
  */
 public class DefaultGameTable implements TavoloDaGioco{
 
-    public List<Giocatore> listaGiocatori;
+    public List<Player> listaGiocatori;
     public int numeroGiocatori;
-    public Gioco tipoDiGioco;
+    public Game tipoDiGame;
 
-    public DefaultGameTable(List<Giocatore> listPlayer, Gioco tipologia){
+    public DefaultGameTable(List<Player> listPlayer, Game tipologia){
         this.listaGiocatori = listPlayer;
         this.numeroGiocatori = listPlayer.size();
-        this.tipoDiGioco = tipologia;
+        this.tipoDiGame = tipologia;
     }
 
     @Override
@@ -23,10 +23,10 @@ public class DefaultGameTable implements TavoloDaGioco{
     }
 
     @Override
-    public boolean addMazzo(Mazzo mazzo) {
-        if(mazzo == null) throw new NullPointerException();
-        if(!this.tipoDiGioco.getTypeCards().equals(mazzo)) throw new IllegalArgumentException();
-        int sizeMazzo = mazzo.size();
+    public boolean addMazzo(Deck deck) {
+        if(deck == null) throw new NullPointerException();
+        if(!this.tipoDiGame.getTypeCards().equals(deck)) throw new IllegalArgumentException();
+        int sizeMazzo = deck.size();
         // 0. Verificare che il mazzo sia non-null; Nel caso NullpointerException
         // 1. Verificare che il mazzo sia compatibile con il gioco scelto
         // 1. Ottenere le dimensioni del mazzo
@@ -35,27 +35,27 @@ public class DefaultGameTable implements TavoloDaGioco{
     }
 
     @Override
-    public boolean addPlayer(Giocatore giocatore) {
+    public boolean addPlayer(Player player) {
         return false;
     }
 
     @Override
-    public boolean removePlayer(Giocatore giocatore) {
+    public boolean removePlayer(Player player) {
         return false;
     }
 
     @Override
-    public boolean addRules(Regole regole) {
+    public boolean addRules(Rules rules) {
         return false;
     }
 
     @Override
-    public Giocatore winnerRound() {
+    public Player winnerRound() {
         return null;
     }
 
     @Override
-    public Giocatore winnerGame() {
+    public Player winnerGame() {
         return null;
     }
 }

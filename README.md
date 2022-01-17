@@ -8,7 +8,7 @@ L’obiettivo del progetto è quello di sviluppare una libreria Java che permett
 ### Il Progetto
 Sviluppo Base (Valutazione massima 25)
 Il progetto consegnato a questo livello di sviluppo dovrà:
-Definire una gerarchia di classi ed interfacce per rappresentare i giochi con le carte e le sue regole;
+Definire una gerarchia di classi ed interfacce per rappresentare i giochi con le carte e le sue rules;
 Usare tali classi ed interfacce per implementare un semplice gioco di carte;
 Implementare una semplice interfaccia a console che consenta di giocare al gioco.
 

@@ -13,46 +13,46 @@ public interface TavoloDaGioco {
     /**
      * Inserisce il mazzo
      *
-     * @param mazzo il mazzo &egrave; da aggiungere
+     * @param deck il mazzo &egrave; da aggiungere
      * @return true se il mazzo &egrave; aggiunto con successo, false altrimenti
      */
-    boolean addMazzo(Mazzo mazzo);
+    boolean addMazzo(Deck deck);
 
     /**
      * Metodo per far sedere un giocatore al tavolo se non presente a inizio partita
      *
-     * @param giocatore giocatore da aggiungere
+     * @param player giocatore da aggiungere
      * @return true se il giocatore &egrave; aggiunto con sucesso, false altrimenti
      */
-    boolean addPlayer(Giocatore giocatore);
+    boolean addPlayer(Player player);
 
     /**
      * Metodo per rimuovere un giocatore dal tavolo
      *
-     * @param giocatore giocatore da rimuovere
+     * @param player giocatore da rimuovere
      * @return true se il giocatore &egrave; rimosso con sucesso, false altrimenti
      */
-    boolean removePlayer(Giocatore giocatore);
+    boolean removePlayer(Player player);
 
     /**
      * Inserisce le regole del gioco scelto
      *
-     * @param regole regole del gioco
+     * @param rules regole del gioco
      * @return true se le regole sono aggiunte con sucesso, false altrimenti
      */
-    boolean addRules(Regole regole);
+    boolean addRules(Rules rules);
 
     /**
      * Calcola chi vince il round
      *
      * @return il giocatore che ha vinto il round
      */
-    Giocatore winnerRound();
+    Player winnerRound();
 
     /**
      * Calcola chi ha vinto il gioco in generale
      *
      * @return il giocatore che ha vinto la partita
      */
-    Giocatore winnerGame();
+    Player winnerGame();
 }
