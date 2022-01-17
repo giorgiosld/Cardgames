@@ -3,7 +3,7 @@ package it.unicam.cs.pa2021.cardgames;
 /**
  * Questa interfaccia rappresenta un generico tavolo da gioco
  */
-public interface TavoloDaGioco {
+public interface GameTable {
 
     /**
      * Sceglie il gioco a cui vuoi partecipare

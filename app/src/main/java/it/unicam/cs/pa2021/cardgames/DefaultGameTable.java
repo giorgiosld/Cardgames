@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Implementazione di default del tavolo da gioco
  */
-public class DefaultGameTable implements TavoloDaGioco{
+public class DefaultGameTable implements GameTable {
 
     public List<Player> listaGiocatori;
     public int numeroGiocatori;
