@@ -3,12 +3,19 @@ package it.unicam.cs.pa2021.cardgames;
 /**
  * Interfaccia che rappresenta un generico gioco
  */
-public interface Game {
+public interface Game<T> {
 
     /**
-     * Ritorna la tipologia di mazzo utilizzato nel gioco
+     * Ritorna le regole del gioco attuale
      *
-     * @return tipologia del mazzo
+     * @return regole del gioco attuale
      */
-    Deck getTypeCards();
+    Rules<T> seeRules();
+
+    /**
+     * Metodo che permette di iniziare la partita
+     */
+    void start();
+
+
 }
