@@ -1,16 +1,15 @@
 package it.unicam.cs.pa2021.cardgames.cards;
 
-public enum FrenchSuit {
-
-    HEARTS("h"),
-    DIAMONDS("d"),
-    CLUBS("c"),
-    SPADES("s");
+public enum ItalianSuit {
+    SPADE("s"),
+    COPPE("c"),
+    DENARI("d"),
+    BASTONI("b");
 
 
     private final String name;
 
-    private FrenchSuit(String name) {
+    private ItalianSuit(String name) {
         this.name = name;
     }
 

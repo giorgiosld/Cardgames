@@ -1,5 +1,7 @@
 package it.unicam.cs.pa2021.cardgames;
 
+import it.unicam.cs.pa2021.cardgames.cards.SimpleCard;
+
 import java.util.List;
 
 /**
@@ -33,8 +35,9 @@ public interface Deck<T> {
      * Metodo che permette di aggiungere una carta al mazzo
      *
      * @param card la carta aggiunta
+     * @param index
      */
-    void addCard(T card);
+    void addCard(T card, int index);
 
     /**
      * Metodo che permette l'aggiunta di una lista di carte al mazzo
@@ -46,14 +49,15 @@ public interface Deck<T> {
     /**
      * Metodo che permette la rimozione di una carta dal mazzo
      *
+     * @param index l'indice della carta da rimuovere
      * @return la carta rimossa
      */
-    T removeCard();
+    SimpleCard removeCard(int index);
 
     /**
      * Metodo che permette la rimozione di una lista di carte dal mazzo
      *
      * @return la lista di carte rimosse
      */
-    List<T> removeCards();
+    List<T> removeCards(List cards);
 }

@@ -1,16 +1,19 @@
 package it.unicam.cs.pa2021.cardgames;
 
+import it.unicam.cs.pa2021.cardgames.cards.SimpleCard;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SimpleDeck<T> implements Deck<SimpleCard>{
+public class SimpleDeck<T extends SimpleCard> implements Deck<T>{
 
-    public List<SimpleCard> deck;
+    public List<T> deck;
 
     public SimpleDeck(){
         this.deck = new ArrayList<>();
     }
+
 
     @Override
     public void shuffle() {
@@ -29,23 +32,25 @@ public class SimpleDeck<T> implements Deck<SimpleCard>{
     }
 
     @Override
-    public void addCard(SimpleCard card) {
-        deck.add(card);
+    public void addCard(T card, int index) {
+        deck.add(index, card);
     }
 
 
     @Override
     public void addCards(List cards) {
-
+        deck.addAll(cards);
     }
 
     @Override
-    public SimpleCard removeCard() {
-        return null;
+    public T removeCard(int index) {
+        T cardRemoved = deck.remove(index);
+        return cardRemoved;
     }
 
     @Override
-    public List removeCards() {
-        return null;
+    public List removeCards(List cards) {
+        deck.removeAll(cards);
+        return cards;
     }
 }
