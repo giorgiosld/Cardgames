@@ -16,13 +16,6 @@ public interface Deck<T> {
 
 
     /**
-     * Restituisce il tipo di mazzo che si sta usando
-     *
-     * @return tipo di mazzo
-     */
-    T type();
-
-    /**
      * Restituisce il numero di carte rimaste all'interno del mazzo
      *
      * @return il numero di carte ancora giocabili
