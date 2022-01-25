@@ -1,4 +1,4 @@
-package it.unicam.cs.pa2021.cardgames;
+package it.unicam.cs.pa2021.cardgames.cards;
 
 /**
  * Enum che definisce la faccia della carta. Solo up la rende visibile.

@@ -1,25 +1,29 @@
 package it.unicam.cs.pa2021.cardgames;
 
+import it.unicam.cs.pa2021.cardgames.cards.Face;
+import it.unicam.cs.pa2021.cardgames.cards.FrenchRank;
+import it.unicam.cs.pa2021.cardgames.cards.FrenchSuit;
+
 public class SimpleCard implements Card {
 
     public Face face;
-    private final Rank rank;
-    private final Suit suit;
+    private final FrenchRank frenchRank;
+    private final FrenchSuit frenchSuit;
 
-    public SimpleCard(Rank r, Suit s){
-        this.rank = r;
-        this.suit = s;
+    public SimpleCard(FrenchRank r, FrenchSuit s){
+        this.frenchRank = r;
+        this.frenchSuit = s;
         face = Face.DOWN;
     }
 
     @Override
-    public Rank getRank() {
-        return this.rank;
+    public FrenchRank getRank() {
+        return this.frenchRank;
     }
 
     @Override
-    public Suit getSuit() {
-        return this.suit;
+    public FrenchSuit getSuit() {
+        return this.frenchSuit;
     }
 
     @Override

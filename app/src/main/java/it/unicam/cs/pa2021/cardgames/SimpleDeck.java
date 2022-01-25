@@ -13,7 +13,7 @@ public class SimpleDeck<T> implements Deck<SimpleCard>{
     }
 
     @Override
-    public void initialize() {
+    public void shuffle() {
         Collections.shuffle(deck);
     }
 

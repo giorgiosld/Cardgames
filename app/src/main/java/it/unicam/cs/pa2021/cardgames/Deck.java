@@ -10,9 +10,9 @@ import java.util.List;
 public interface Deck<T> {
 
     /**
-     * Inizializza il mazzo di carte in maniera casuale
+     * Mischia il mazzo di carte in maniera casuale
      */
-    void initialize();
+    void shuffle();
 
 
     /**
