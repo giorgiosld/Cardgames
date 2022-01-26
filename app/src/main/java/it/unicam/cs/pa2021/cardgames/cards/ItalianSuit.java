@@ -9,7 +9,7 @@ public enum ItalianSuit {
 
     private final String name;
 
-    private ItalianSuit(String name) {
+    ItalianSuit(String name) {
         this.name = name;
     }
 

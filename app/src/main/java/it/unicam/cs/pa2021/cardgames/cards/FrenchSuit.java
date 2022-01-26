@@ -10,7 +10,7 @@ public enum FrenchSuit {
 
     private final String name;
 
-    private FrenchSuit(String name) {
+    FrenchSuit(String name) {
         this.name = name;
     }
 

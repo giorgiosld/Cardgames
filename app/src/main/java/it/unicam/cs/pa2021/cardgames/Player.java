@@ -5,5 +5,8 @@ package it.unicam.cs.pa2021.cardgames;
  */
 public interface Player<T> {
 
-
+    /**
+     * Metodo che permette la visualizzazione del punteggio
+     */
+    int seePoints();
 }

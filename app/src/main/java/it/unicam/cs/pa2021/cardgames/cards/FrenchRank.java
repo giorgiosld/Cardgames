@@ -21,7 +21,7 @@ public enum FrenchRank {
     private final String name;
 
 
-    private FrenchRank(int index, String name) {
+    FrenchRank(int index, String name) {
         this.index = index;
         this.name = name;
     }

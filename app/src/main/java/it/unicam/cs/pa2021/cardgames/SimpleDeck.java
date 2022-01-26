@@ -38,18 +38,17 @@ public class SimpleDeck<T extends SimpleCard> implements Deck<T>{
 
 
     @Override
-    public void addCards(List cards) {
+    public void addCards(List<T> cards) {
         deck.addAll(cards);
     }
 
     @Override
     public T removeCard(int index) {
-        T cardRemoved = deck.remove(index);
-        return cardRemoved;
+        return deck.remove(index);
     }
 
     @Override
-    public List removeCards(List cards) {
+    public List<T> removeCards(List<T> cards) {
         deck.removeAll(cards);
         return cards;
     }

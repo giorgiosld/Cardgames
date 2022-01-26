@@ -59,5 +59,5 @@ public interface Deck<T> {
      *
      * @return la lista di carte rimosse
      */
-    List<T> removeCards(List cards);
+    List<T> removeCards(List<T> cards);
 }

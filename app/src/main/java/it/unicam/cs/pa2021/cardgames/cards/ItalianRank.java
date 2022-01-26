@@ -17,7 +17,7 @@ public enum ItalianRank {
     private final String name;
 
 
-    private ItalianRank(int index, String name) {
+    ItalianRank(int index, String name) {
         this.index = index;
         this.name = name;
     }

@@ -1,5 +1,7 @@
 package it.unicam.cs.pa2021.cardgames;
 
+import it.unicam.cs.pa2021.cardgames.cards.SimpleCard;
+
 /**
  * Questa interfaccia rappresenta un generico tavolo da gioco
  */
@@ -16,7 +18,7 @@ public interface GameTable {
      * @param deck il mazzo da aggiungere
      * @return true se il mazzo &egrave; aggiunto con successo, false altrimenti
      */
-    boolean addMazzo(Deck<TypeDeck> deck);
+    boolean setMazzo(Deck<? extends SimpleCard> deck);
 
     /**
      * Metodo per far sedere un giocatore al tavolo se non presente a inizio partita

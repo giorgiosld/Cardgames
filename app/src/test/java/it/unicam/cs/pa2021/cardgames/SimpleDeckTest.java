@@ -42,6 +42,14 @@ public class SimpleDeckTest {
         listRemoved = deck.removeCards(listToRemove);
         assertEquals(listToAdd, listRemoved);
         assertEquals(deck.size(), 52);
+        FrenchCard toTest = new FrenchCard(FrenchRank.FOUR, FrenchSuit.DIAMONDS);
+        assertEquals(FrenchRank.FOUR, toTest.getRank());
+        assertEquals(FrenchSuit.DIAMONDS, toTest.getSuit());
+        assertEquals(Face.DOWN, toTest.getFace());
+        toTest.setFace(Face.UP);
+        assertEquals(Face.UP, toTest.getFace());
+        FrenchCard toTestFace = deck.removeCard(deck.size()-1);
+        assertEquals(toTestFace.getFace(), Face.DOWN);
     }
 
     @Test

@@ -1,12 +1,13 @@
 package it.unicam.cs.pa2021.cardgames.cards;
 
-import it.unicam.cs.pa2021.cardgames.cards.Card;
-import it.unicam.cs.pa2021.cardgames.cards.Face;
 
-public abstract class SimpleCard implements Card {
+public abstract class SimpleCard<T, P> implements Card<T, P> {
 
     public Face face;
 
+    public SimpleCard(){
+        this.face = Face.DOWN;
+    }
 
     @Override
     public void setFace(Face f) {
