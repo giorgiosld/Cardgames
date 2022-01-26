@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class SimpleDeckTest {
 
     @Test
-    public void createDeckBlackJack(){
+    public void manageDeckFrenchCards(){
         SimpleDeck<FrenchCard> deck = new SimpleDeck<>();
         for (FrenchSuit s : FrenchSuit.values()){
             for (FrenchRank r: FrenchRank.values()){
@@ -41,10 +41,11 @@ public class SimpleDeckTest {
         List<FrenchCard> listRemoved;
         listRemoved = deck.removeCards(listToRemove);
         assertEquals(listToAdd, listRemoved);
+        assertEquals(deck.size(), 52);
     }
 
     @Test
-    public void createDeckScopa(){
+    public void manageDeckItalianCards(){
         SimpleDeck<ItalianCard> deck = new SimpleDeck<>();
         for (ItalianSuit s : ItalianSuit.values()){
             for (ItalianRank r: ItalianRank.values()){
@@ -59,6 +60,22 @@ public class SimpleDeckTest {
         assertEquals(deck.size(), 41);
         ItalianCard toDelete = deck.removeCard(deck.size()-1);
         assertEquals(toDelete, toAdd);
+        assertEquals(deck.size(), 40);
+
+        List<ItalianCard> listToAdd = new ArrayList<>();
+        ItalianCard toAddList1 = new ItalianCard(ItalianRank.RE, ItalianSuit.DENARI);
+        ItalianCard toAddList2 = new ItalianCard(ItalianRank.SEVEN, ItalianSuit.SPADE);
+        ItalianCard toAddList3 = new ItalianCard(ItalianRank.ACE, ItalianSuit.COPPE);
+        listToAdd.add(toAddList1);
+        listToAdd.add(toAddList2);
+        listToAdd.add(toAddList3);
+        deck.addCards(listToAdd);
+        assertEquals(deck.size(), 43);
+        List<ItalianCard> listToRemove;
+        listToRemove = listToAdd.stream().toList();
+        List<ItalianCard> listRemoved;
+        listRemoved = deck.removeCards(listToRemove);
+        assertEquals(listToAdd, listRemoved);
         assertEquals(deck.size(), 40);
     }
 
