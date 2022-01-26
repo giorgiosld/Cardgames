@@ -1,12 +1,14 @@
 package it.unicam.cs.pa2021.cardgames;
 
+import it.unicam.cs.pa2021.cardgames.cards.Rank;
 import it.unicam.cs.pa2021.cardgames.cards.SimpleCard;
+import it.unicam.cs.pa2021.cardgames.cards.Suit;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SimpleDeck<T extends SimpleCard> implements Deck<T>{
+public class SimpleDeck<T extends SimpleCard<? extends Rank,? extends Suit>> implements Deck<T>{
 
     public List<T> deck;
 

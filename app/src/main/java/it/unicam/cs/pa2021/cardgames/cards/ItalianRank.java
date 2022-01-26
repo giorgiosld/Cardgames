@@ -1,6 +1,6 @@
 package it.unicam.cs.pa2021.cardgames.cards;
 
-public enum ItalianRank {
+public enum ItalianRank implements Rank{
     ACE(0, "1"),
     TWO(1, "2"),
     THREE(2, "3"),

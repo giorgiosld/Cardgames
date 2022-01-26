@@ -1,6 +1,6 @@
 package it.unicam.cs.pa2021.cardgames.cards;
 
-public enum ItalianSuit {
+public enum ItalianSuit implements Suit{
     SPADE("s"),
     COPPE("c"),
     DENARI("d"),

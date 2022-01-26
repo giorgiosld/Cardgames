@@ -1,6 +1,6 @@
 package it.unicam.cs.pa2021.cardgames.cards;
 
-public enum FrenchRank {
+public enum FrenchRank implements Rank{
 
     TWO(0, "2"),
     THREE(1, "3"),
