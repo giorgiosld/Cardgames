@@ -1,18 +1,16 @@
 package it.unicam.cs.pa2021.cardgames.games;
 
 import it.unicam.cs.pa2021.cardgames.SimpleDeck;
-import it.unicam.cs.pa2021.cardgames.cards.FrenchCard;
-import it.unicam.cs.pa2021.cardgames.cards.FrenchRank;
-import it.unicam.cs.pa2021.cardgames.cards.FrenchSuit;
+import it.unicam.cs.pa2021.cardgames.cards.*;
 
-public class BlackJackGame extends SimpleGame implements Game{
+public class BlackJackGame<T extends SimpleCard<? extends Rank, ? extends Suit>>  extends SimpleGame<T> implements Game<T>{
 
     public SimpleDeck<FrenchCard> deck;
 
 
     @Override
-    public void start() {
-        deck = initializeDeck();
+    public SimpleDeck<FrenchCard> start() {
+        return deck = initializeDeck();
     }
 
     @Override
