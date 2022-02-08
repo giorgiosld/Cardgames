@@ -1,11 +1,13 @@
-package it.unicam.cs.pa2021.cardgames;
+package it.unicam.cs.pa2021.cardgames.games;
+
+import it.unicam.cs.pa2021.cardgames.Rules;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleGame implements Game{
+public abstract class SimpleGame implements Game {
 
-    List<Rules> rules;
+    public List<Rules> rules;
 
     public SimpleGame(){
         this.rules = new ArrayList<>();
@@ -17,15 +19,10 @@ public class SimpleGame implements Game{
         return rules;
     }
 
-    @Override
-    public void start() {
-
-    }
 
     @Override
     public boolean addRule(Rules rules) {
-        rules.addRules(rules);
-        return true;
+        return rules.addRules(rules);
     }
 
     @Override

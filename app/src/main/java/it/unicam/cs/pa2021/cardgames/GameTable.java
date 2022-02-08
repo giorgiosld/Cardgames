@@ -1,6 +1,8 @@
 package it.unicam.cs.pa2021.cardgames;
 
 import it.unicam.cs.pa2021.cardgames.cards.SimpleCard;
+import it.unicam.cs.pa2021.cardgames.games.Game;
+import it.unicam.cs.pa2021.cardgames.roles.Player;
 
 /**
  * Questa interfaccia rappresenta un generico tavolo da gioco
@@ -9,8 +11,10 @@ public interface GameTable {
 
     /**
      * Sceglie il gioco a cui vuoi partecipare
+     *
+     * @param game il gioco che si vuole scegliere
      */
-    void chooseGame();
+    void chooseGame(Game game);
 
     /**
      * Inserisce il mazzo
@@ -37,6 +41,11 @@ public interface GameTable {
     boolean removePlayer(Player<Game> player);
 
 
-
+    /**
+     * Metodo per aggiungere un nuovo gioco a quelli disponibili
+     *
+     * @oaram game il gioco da aggiungere
+     */
+    boolean addGame(Game game);
 
 }

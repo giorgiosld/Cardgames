@@ -1,4 +1,10 @@
-package it.unicam.cs.pa2021.cardgames;
+package it.unicam.cs.pa2021.cardgames.games;
+
+import it.unicam.cs.pa2021.cardgames.Rules;
+import it.unicam.cs.pa2021.cardgames.SimpleDeck;
+import it.unicam.cs.pa2021.cardgames.cards.Rank;
+import it.unicam.cs.pa2021.cardgames.cards.SimpleCard;
+import it.unicam.cs.pa2021.cardgames.cards.Suit;
 
 import java.util.List;
 
@@ -34,4 +40,11 @@ public interface Game {
      * @return true se viene rimossa
      */
     boolean removeRule(Rules rule);
+
+    /**
+     * Metodo che inizializza un mazzo all'interno del gioco
+     *
+     * @return il tipo di mazzo, pu&ograve; puo ritornare sia mazzo francese che mazzo italiano
+     */
+    SimpleDeck<? extends SimpleCard<? extends Rank, ? extends Suit>> initializeDeck();
 }

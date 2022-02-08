@@ -1,10 +1,9 @@
 package it.unicam.cs.pa2021.cardgames;
 
-import java.util.ArrayList;
 /**
  * Interfaccia rappresentante le regole di un generico gioco di carte
  */
-public interface Rules<T> {
+public interface Rules {
 
     /**
      * Metodo che permette di aggiungere una regola
@@ -12,7 +11,7 @@ public interface Rules<T> {
      * @param r la regola da aggiungere
      * @return true se aggiunta
      */
-    boolean addRules(Rules<T> r);
+    boolean addRules(Rules r);
 
     /**
      * Metodo che permette l'eliminazione di una regola
