@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Interfaccia che rappresenta un generico gioco
  */
-public interface Game {
+public interface Game<T extends SimpleCard<? extends Rank, ? extends Suit>> {
 
     /**
      * Ritorna le regole del gioco attuale
@@ -23,7 +23,7 @@ public interface Game {
     /**
      * Metodo che permette di iniziare la partita
      */
-    void start();
+    SimpleDeck<? extends SimpleCard<? extends Rank, ? extends Suit>> start();
 
     /**
      * Metodo che permette l'aggiunta di una regola al gioco

@@ -1,46 +1,50 @@
 package it.unicam.cs.pa2021.cardgames;
 
-import it.unicam.cs.pa2021.cardgames.cards.Rank;
-import it.unicam.cs.pa2021.cardgames.cards.SimpleCard;
-import it.unicam.cs.pa2021.cardgames.cards.Suit;
-import it.unicam.cs.pa2021.cardgames.games.Game;
-import it.unicam.cs.pa2021.cardgames.roles.Player;
+import it.unicam.cs.pa2021.cardgames.cards.*;
+import it.unicam.cs.pa2021.cardgames.games.SimpleGame;
+import it.unicam.cs.pa2021.cardgames.roles.SimplePlayer;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleGameTable implements GameTable{
+public class SimpleGameTable<T extends SimpleCard<? extends Rank, ? extends Suit>, P extends SimpleGame<T>> implements GameTable<T,P>{
 
-    List<Player> players = new ArrayList<>();
-    Deck<? extends SimpleCard<? extends Rank,? extends Suit>> mazzo;
-    List<Game> gameList = new ArrayList<>();
+    SimpleDeck<? extends SimpleCard<? extends Rank, ? extends Suit>> deck;
+    List<SimplePlayer<P>> players;
+    List<P> games;
 
-
-    @Override
-    public void chooseGame(Game game) {
-            this.gameList.stream().filter(x -> x.equals(game)).findFirst().get().start();
+    SimpleGameTable(SimpleDeck<T> deck){
+        this.deck = deck;
     }
 
     @Override
-    public boolean setMazzo(Deck<? extends SimpleCard> deck) {
-        //this.mazzo = deck;
-        return true;
+    public void setDeck(SimpleDeck<T> deck) {
+        this.deck = deck;
     }
 
     @Override
-    public boolean addPlayer(Player<Game> player) {
+    public void addPlayer(SimplePlayer<P> player) {
         this.players.add(player);
-        return true;
     }
 
     @Override
-    public boolean removePlayer(Player<Game> player) {
+    public void removePayer(SimplePlayer<P> player) {
         this.players.remove(player);
-        return true;
     }
 
     @Override
-    public boolean addGame(Game game) {
-        return this.gameList.add(game);
+    public void chooseGame(P game) {
+        //in caso eccezione
+        if (games.isEmpty())
+            addGame(game);
+        P gametoStart = games.stream().filter(x -> x.equals(game)).findFirst().orElse(null);
+        assert gametoStart != null;
+        this.deck = gametoStart.start();
     }
+
+    @Override
+    public void addGame(P game) {
+        this.games.add(game);
+    }
+
+
 }
