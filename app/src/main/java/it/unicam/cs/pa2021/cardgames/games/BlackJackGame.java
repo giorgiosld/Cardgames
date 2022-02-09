@@ -3,10 +3,14 @@ package it.unicam.cs.pa2021.cardgames.games;
 import it.unicam.cs.pa2021.cardgames.SimpleDeck;
 import it.unicam.cs.pa2021.cardgames.cards.*;
 
-public class BlackJackGame<T extends SimpleCard<? extends Rank, ? extends Suit>>  extends SimpleGame<T> implements Game<T>{
+
+public class BlackJackGame  extends SimpleGame<FrenchCard> implements Game<FrenchCard>{
 
     public SimpleDeck<FrenchCard> deck;
 
+    public BlackJackGame(){
+        deck = new SimpleDeck<>();
+    }
 
     @Override
     public SimpleDeck<FrenchCard> start() {

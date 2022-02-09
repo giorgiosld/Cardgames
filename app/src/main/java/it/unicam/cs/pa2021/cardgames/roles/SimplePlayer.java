@@ -7,7 +7,7 @@ public class SimplePlayer<T extends SimpleGame> implements Player<T> {
     public String nome;
     public int id;
 
-    SimplePlayer(String nome, int id){
+    public SimplePlayer(String nome, int id){
         this.nome = nome;
         this.id = id;
     }

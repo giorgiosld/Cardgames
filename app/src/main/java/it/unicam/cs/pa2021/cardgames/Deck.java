@@ -1,6 +1,10 @@
 package it.unicam.cs.pa2021.cardgames;
 
 
+import it.unicam.cs.pa2021.cardgames.cards.Rank;
+import it.unicam.cs.pa2021.cardgames.cards.SimpleCard;
+import it.unicam.cs.pa2021.cardgames.cards.Suit;
+
 import java.util.List;
 
 /**
@@ -8,7 +12,7 @@ import java.util.List;
  *
  * @param <T> il tipo parametrico per le carte contenute nel mazzo
  */
-public interface Deck<T> {
+public interface Deck<T extends SimpleCard<? extends Rank, ? extends Suit>> {
 
     /**
      * Mischia il mazzo di carte in maniera casuale

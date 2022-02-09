@@ -23,7 +23,7 @@ public interface Game<T extends SimpleCard<? extends Rank, ? extends Suit>> {
     /**
      * Metodo che permette di iniziare la partita
      */
-    SimpleDeck<? extends SimpleCard<? extends Rank, ? extends Suit>> start();
+    SimpleDeck<T> start();
 
     /**
      * Metodo che permette l'aggiunta di una regola al gioco

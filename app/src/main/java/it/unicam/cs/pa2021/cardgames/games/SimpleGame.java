@@ -25,7 +25,8 @@ public abstract class SimpleGame<T extends SimpleCard<? extends Rank, ? extends 
 
     @Override
     public boolean addRule(Rules rules) {
-        return rules.addRules(rules);
+        //return rules.addRules(rules);
+        return  true;
     }
 
     @Override
