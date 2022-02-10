@@ -11,12 +11,13 @@ public class SimpleGameTable<T extends SimpleCard<? extends Rank, ? extends Suit
 
     SimpleDeck<T> deck;
     List<SimplePlayer<P>> players;
-    List<P> games;
+    P gameInTable;
 
-    SimpleGameTable(SimpleDeck<T> deck){
-        this.deck = deck;
-        this.games = new ArrayList<>();
-        this.players = new ArrayList<>();
+    SimpleGameTable(SimpleDeck<T> deck, P game){
+        this.deck = deck;;
+        this.players= new ArrayList<>();
+        this.gameInTable = game;
+        startGame(this.gameInTable);
     }
 
     @Override
@@ -35,19 +36,9 @@ public class SimpleGameTable<T extends SimpleCard<? extends Rank, ? extends Suit
     }
 
     @Override
-    public void chooseGame(P game) {
-        //in caso eccezione
-        if (games.isEmpty())
-            addGame(game);
-        P gametoStart = games.stream().filter(x -> x.equals(game)).findFirst().orElse(null);
-        assert gametoStart != null;
-        SimpleDeck<T> deckToSet = gametoStart.start();
+    public void startGame(P game) {
+        SimpleDeck<T> deckToSet = gameInTable.start();
         setDeck(deckToSet);
-    }
-
-    @Override
-    public void addGame(P game) {
-        this.games.add(game);
     }
 
     @Override
@@ -55,5 +46,6 @@ public class SimpleGameTable<T extends SimpleCard<? extends Rank, ? extends Suit
         return this.players.size();
     }
 
-
+    //TODO
+    //modificare javadoc card
 }

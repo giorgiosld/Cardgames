@@ -34,12 +34,12 @@ public interface GameTable<T extends SimpleCard<? extends Rank, ? extends Suit>,
     void removePayer(SimplePlayer<P> player);
 
     /**
+     * Metodo che permette la start del gioco all'interno del tavolo da gioco
      *
      * @param game
      */
-    void chooseGame(P game);
+    void startGame(P game);
 
-    void addGame(P game);
 
     /**
      * Metodo che ritorna il numero di giocatori presenti all'interno del tavolo da gioco

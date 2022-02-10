@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * Interfaccia che rappresenta un generico gioco
+ *
+ * @param <T> il tipo parametrico per le carte contenute nel mazzo
  */
 public interface Game<T extends SimpleCard<? extends Rank, ? extends Suit>> {
 

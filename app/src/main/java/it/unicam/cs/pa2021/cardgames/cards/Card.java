@@ -2,7 +2,10 @@ package it.unicam.cs.pa2021.cardgames.cards;
 
 
 /**
- * Interfaccia rappresentando una generica carta
+ * Interfaccia generica per una carta che permette la sua identificazione
+ *
+ * @param <T> valore generico rappresentante un valore
+ * @param <P> valore generico rappresentante un seme
  */
 public interface Card<T,P> {
 

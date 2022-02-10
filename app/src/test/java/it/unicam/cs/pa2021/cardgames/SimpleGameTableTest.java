@@ -12,9 +12,8 @@ public class SimpleGameTableTest {
     public void manageGameTable() {
         SimpleDeck<FrenchCard> deck = new SimpleDeck<>();
         BlackJackGame bj = new BlackJackGame();
-        SimpleGameTable<FrenchCard, BlackJackGame> tableBJ = new SimpleGameTable<>(deck);
-        tableBJ.addGame(bj);
-        tableBJ.chooseGame(bj);
+        SimpleGameTable<FrenchCard, BlackJackGame> tableBJ = new SimpleGameTable<>(deck, bj);
+        //tableBJ.chooseGame(bj);
         assertEquals(tableBJ.deck.size(), 52);
         SimplePlayer<BlackJackGame> pl1 = new SimplePlayer<>("Giorgio", 1);
         SimplePlayer<BlackJackGame> pl2 = new SimplePlayer<>("Spina", 2);
