@@ -3,7 +3,12 @@
  */
 package it.unicam.cs.pa2021.cardgames;
 
-import it.unicam.cs.pa2021.cardgames.blackjack.*;
+import it.unicam.cs.pa2021.cardgames.blackjack.controller.Engine;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackDealer;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIDeck;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIGame;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIPlayer;
+import it.unicam.cs.pa2021.cardgames.blackjack.view.BlackJackTable;
 
 import java.io.BufferedReader;
 import java.io.IOException;

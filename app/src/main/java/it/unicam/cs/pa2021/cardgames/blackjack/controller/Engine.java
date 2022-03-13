@@ -1,5 +1,10 @@
-package it.unicam.cs.pa2021.cardgames.blackjack;
+package it.unicam.cs.pa2021.cardgames.blackjack.controller;
 
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackDealer;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIDeck;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIGame;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIPlayer;
+import it.unicam.cs.pa2021.cardgames.blackjack.view.BlackJackTable;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.Face;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
 

@@ -1,10 +1,12 @@
-package it.unicam.cs.pa2021.cardgames.blackjack;
+package it.unicam.cs.pa2021.cardgames.blackjack.view;
 
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIDeck;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIGame;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIPlayer;
+import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackDealer;
 import it.unicam.cs.pa2021.cardgames.util.controller.winner.IGameWinner;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
 import it.unicam.cs.pa2021.cardgames.util.controller.table.SimpleIGameTable;
-import it.unicam.cs.pa2021.cardgames.util.model.deck.SimpleIDeck;
-import it.unicam.cs.pa2021.cardgames.util.model.player.Hand;
 
 import java.util.List;
 

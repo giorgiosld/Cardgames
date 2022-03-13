@@ -1,11 +1,10 @@
-package it.unicam.cs.pa2021.cardgames.blackjack;
+package it.unicam.cs.pa2021.cardgames.blackjack.model;
 
+import it.unicam.cs.pa2021.cardgames.blackjack.view.BlackJackTable;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
 import it.unicam.cs.pa2021.cardgames.util.model.player.Hand;
 import it.unicam.cs.pa2021.cardgames.util.model.player.IDealer;
 import it.unicam.cs.pa2021.cardgames.util.model.player.SimpleIPlayer;
-
-import java.util.List;
 
 public class BlackJackDealer extends SimpleIPlayer<FrenchICard> implements IDealer<FrenchICard, BlackJackIDeck, BlackJackIPlayer, BlackJackTable> {
 

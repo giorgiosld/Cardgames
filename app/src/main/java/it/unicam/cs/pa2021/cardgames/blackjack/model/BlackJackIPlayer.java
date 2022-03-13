@@ -1,4 +1,4 @@
-package it.unicam.cs.pa2021.cardgames.blackjack;
+package it.unicam.cs.pa2021.cardgames.blackjack.model;
 
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchIRank;
