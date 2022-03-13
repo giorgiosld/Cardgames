@@ -27,5 +27,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'it.cs.unicam.pa2021.App'
+    mainClass = 'it.cs.unicam.pa2021.App.main'
 }
