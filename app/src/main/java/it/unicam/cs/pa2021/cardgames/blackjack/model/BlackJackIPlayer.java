@@ -1,7 +1,6 @@
 package it.unicam.cs.pa2021.cardgames.blackjack.model;
 
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
-import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchIRank;
 import it.unicam.cs.pa2021.cardgames.util.model.player.Hand;
 import it.unicam.cs.pa2021.cardgames.util.model.player.IBanker;
 import it.unicam.cs.pa2021.cardgames.util.model.player.SimpleIPlayer;
@@ -46,5 +45,14 @@ public class BlackJackIPlayer extends SimpleIPlayer<FrenchICard> implements IBan
 
     public int getBank(){
         return this.bank;
+    }
+
+    public void setBank(int newBank){
+        this.bank = newBank;
+    }
+
+    @Override
+    public void clearHand(){
+        this.bjHand.removeCards();
     }
 }

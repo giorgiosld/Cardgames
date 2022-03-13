@@ -57,4 +57,9 @@ public class BlackJackDealer extends SimpleIPlayer<FrenchICard> implements IDeal
     public FrenchICard removeCard() {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public void clearHand() {
+        this.banco.removeCards();
+    }
 }

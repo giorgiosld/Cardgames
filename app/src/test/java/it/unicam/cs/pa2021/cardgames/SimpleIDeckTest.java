@@ -44,9 +44,10 @@ public class SimpleIDeckTest {
         assertEquals(listToAdd, listRemoved);
         assertEquals(deck.size(), 52);
         FrenchICard toTest = new FrenchICard(FrenchIRank.FOUR, FrenchISuit.DIAMONDS);
-        assertEquals(FrenchIRank.FOUR, toTest.getRank());
-        assertEquals(FrenchISuit.DIAMONDS, toTest.getSuit());
         assertEquals(Face.DOWN, toTest.getFace());
+        toTest.setFace(Face.UP);
+        assertEquals(FrenchIRank.FOUR.getBjValue(), toTest.getRank().get().getBjValue());
+        assertEquals(FrenchISuit.DIAMONDS, toTest.getSuit());
         toTest.setFace(Face.UP);
         assertEquals(Face.UP, toTest.getFace());
         FrenchICard toTestFace = deck.removeCard(deck.size()-1);

@@ -10,7 +10,7 @@ import it.unicam.cs.pa2021.cardgames.util.controller.table.SimpleIGameTable;
 
 import java.util.List;
 
-public class BlackJackTable extends SimpleIGameTable<FrenchICard, BlackJackIPlayer> implements IGameWinner<BlackJackIPlayer>{
+public class BlackJackTable extends SimpleIGameTable<FrenchICard, BlackJackIPlayer>{
 
     private BlackJackIDeck deck;
     private BlackJackIGame game;
@@ -26,8 +26,6 @@ public class BlackJackTable extends SimpleIGameTable<FrenchICard, BlackJackIPlay
     @Override
     public void startGame() {
         this.deck = this.game.start();
-        //addmano turno
-        //evaluate winner
     }
 
     @Override
@@ -35,21 +33,6 @@ public class BlackJackTable extends SimpleIGameTable<FrenchICard, BlackJackIPlay
         return this.deck;
     }
 
-//    @Override
-//    public BlackJackIDeck initializeDeck() {
-//        for (FrenchISuit s : FrenchISuit.values()){
-//            for (FrenchIRank r: FrenchIRank.values()){
-//                deck.addCard(new FrenchICard(r, s), deck.size());
-//            }
-//        }
-//        return deck;
-//    }
-
-
-    @Override
-    public BlackJackIPlayer evaluateWinner(List<BlackJackIPlayer> players) {
-        return null;
-    }
 
     public void addDealer(BlackJackDealer dealer){
         mazziere = dealer;

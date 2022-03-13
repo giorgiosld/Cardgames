@@ -1,5 +1,6 @@
 package it.unicam.cs.pa2021.cardgames.blackjack.model;
 
+import it.unicam.cs.pa2021.cardgames.util.model.cards.Face;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchIRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchISuit;
@@ -43,10 +44,11 @@ public class BlackJackIGame implements IGame<FrenchICard, BlackJackIDeck> {
         return false;*/
         int total = 0;
         for(FrenchICard single: mano){
+            if(single.getFace().equals(Face.DOWN))  single.setFace(Face.UP);
             int valueCard = single.getRank().get().getBjValue();
             total += valueCard;
         }
-        System.out.println(total);
+        //System.out.println(total);
         return total;
     }
 }

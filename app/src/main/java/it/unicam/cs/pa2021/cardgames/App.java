@@ -25,13 +25,12 @@ public class App {
         bjTable.startGame();
         bjTable.addPlayer(player1);
         bjTable.addPlayer(player2);
-        //player1.addCardToHand(bjTable.);
         BlackJackDealer dealer = new BlackJackDealer("spina", 3);
         bjTable.addDealer(dealer);
-        //ciclo per partite di seguito
         String restart = "yes";
-        while(restart.equals("yes")){
+        while(restart.equals("yes") || (restart.equals("1"))){
             Engine gioco = new Engine(bjTable);
+            gioco.clearHand(bjTable);
             gioco.shuffleDeck(bjTable);
             try {
                 gioco.askBet(bjTable);
@@ -45,8 +44,8 @@ public class App {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             restart = reader.readLine();
         }
-        //pensare se make choise puo avere un metodo prima
-        //o pensare modularizzazione makechoice in diverse funzioni
+        System.out.println("Partita terminata con "+player1.getNome()+" avente "+player1.getBank()+" coin");
+        System.out.println("Partita terminata con "+player2.getNome()+" avente "+player2.getBank()+" coin");
     }
 }
 

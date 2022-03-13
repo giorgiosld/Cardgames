@@ -40,4 +40,6 @@ public interface IPlayer<T> {
      * @return la carta rimossa
      */
     T removeCard();
+
+    void clearHand();
 }

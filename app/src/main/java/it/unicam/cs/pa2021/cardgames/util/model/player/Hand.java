@@ -33,4 +33,9 @@ public class Hand<T extends SimpleICard<? extends IRank, ? extends ISuit>> imple
     public List<T> getCards(){
         return this.cardsInHand;
     }
+
+    public void removeCards(){
+        List<T> cardsToRemove = this.cardsInHand;
+        this.cardsInHand.removeAll(cardsToRemove);
+    }
 }
