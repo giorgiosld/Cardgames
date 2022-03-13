@@ -39,16 +39,12 @@ public class BlackJackIGame implements IGame<FrenchICard, BlackJackIDeck> {
      * @return true se lo supero else false
      */
     public int calculateHand(List<FrenchICard> mano){
-        /*int total = mano.mapToInt(x -> x.getRank().get().getIndex()).sum();
-        System.out.println(total);
-        return false;*/
         int total = 0;
         for(FrenchICard single: mano){
             if(single.getFace().equals(Face.DOWN))  single.setFace(Face.UP);
             int valueCard = single.getRank().get().getBjValue();
             total += valueCard;
         }
-        //System.out.println(total);
         return total;
     }
 }

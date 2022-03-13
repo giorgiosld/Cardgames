@@ -1,4 +1,4 @@
-package it.unicam.cs.pa2021.cardgames.util.controller;
+package it.unicam.cs.pa2021.cardgames.util.controller.engine;
 
 import it.unicam.cs.pa2021.cardgames.util.model.cards.IRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;

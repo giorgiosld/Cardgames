@@ -40,8 +40,8 @@ public class App {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             restart = reader.readLine();
         }
-        System.out.println("Partita terminata con "+player1.getNome()+" avente "+player1.getBank()+" coin");
-        System.out.println("Partita terminata con "+player2.getNome()+" avente "+player2.getBank()+" coin");
+        for(BlackJackIPlayer bjp : bjTable.getPlayers())
+            System.out.println("Partita terminata con "+bjp.getNome()+" avente "+bjp.getBank()+" coin");
     }
 }
 

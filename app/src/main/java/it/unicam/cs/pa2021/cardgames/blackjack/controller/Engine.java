@@ -4,7 +4,7 @@ import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackDealer;
 import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIDeck;
 import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIPlayer;
 import it.unicam.cs.pa2021.cardgames.blackjack.view.BlackJackTable;
-import it.unicam.cs.pa2021.cardgames.util.controller.IEngine;
+import it.unicam.cs.pa2021.cardgames.util.controller.engine.IEngine;
 import it.unicam.cs.pa2021.cardgames.util.controller.winner.IGameWinner;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.Face;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
@@ -86,20 +86,20 @@ public class Engine implements IGameWinner, IEngine<BlackJackIPlayer> {
 
     @Override
     public void resolveAction(int action, BlackJackIPlayer bjp) {
-        switch (action){
-            case 1:
-                System.out.println("giocatore "+bjp.getNome()+" ha deciso di stare");
+        switch (action) {
+            case 1 -> {
+                System.out.println("giocatore " + bjp.getNome() + " ha deciso di stare");
                 noMoreAction.add(bjp);
-                break;
-            case 2:
-                FrenchICard newCard= bj.getDealer().delOneCard(deck);
+            }
+            case 2 -> {
+                FrenchICard newCard = bj.getDealer().delOneCard(deck);
                 this.turnCard(newCard, bjp);
-                System.out.println("giocatore "+bjp.getNome()+" ha ottenuto "+newCard.getRank().get().getBjValue());
+                System.out.println("giocatore " + bjp.getNome() + " ha ottenuto " + newCard.getRank().get().getBjValue());
                 this.printValue(bjp);
                 int check = bj.getGame().calculateHand(bjp.compareHand().getCards());
-                if(check > 21)
+                if (check > 21)
                     noMoreAction.add(bjp);
-                break;
+            }
         }
     }
 

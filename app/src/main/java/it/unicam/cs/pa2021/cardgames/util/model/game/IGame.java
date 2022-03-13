@@ -23,6 +23,5 @@ public interface IGame<T extends SimpleICard<? extends IRank, ? extends ISuit>, 
      *
      * @return il tipo di mazzo, pu&ograve; puo ritornare sia mazzo francese che mazzo italiano
      */
-    //SimpleIDeck<? extends SimpleICard<? extends IRank, ? extends ISuit>> initializeDeck();
     Q initializeDeck();
 }

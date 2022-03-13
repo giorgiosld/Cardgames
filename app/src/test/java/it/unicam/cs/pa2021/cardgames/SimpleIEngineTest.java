@@ -8,8 +8,6 @@ import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIPlayer;
 import it.unicam.cs.pa2021.cardgames.blackjack.view.BlackJackTable;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import static org.junit.Assert.assertEquals;
 
 public class SimpleIEngineTest {

@@ -1,5 +1,8 @@
 package it.unicam.cs.pa2021.cardgames.util.model.cards;
 
+/**
+ * Enum rappresentante i rank di carte italiane
+ */
 public enum ItalianIRank implements IRank {
     ACE(0, "1"),
     TWO(1, "2"),

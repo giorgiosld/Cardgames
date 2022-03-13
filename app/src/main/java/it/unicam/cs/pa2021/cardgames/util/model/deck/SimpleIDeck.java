@@ -5,7 +5,6 @@ import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SimpleIDeck<T extends SimpleICard<? extends IRank,? extends ISuit>> implements IDeck<T> {

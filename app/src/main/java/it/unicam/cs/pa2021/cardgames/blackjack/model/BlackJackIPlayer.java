@@ -7,7 +7,7 @@ import it.unicam.cs.pa2021.cardgames.util.model.player.SimpleIPlayer;
 
 public class BlackJackIPlayer extends SimpleIPlayer<FrenchICard> implements IBanker<FrenchICard> {
 
-    private Hand<FrenchICard> bjHand;
+    private final Hand<FrenchICard> bjHand;
     private int bank;
     private int bet;
 
@@ -28,10 +28,6 @@ public class BlackJackIPlayer extends SimpleIPlayer<FrenchICard> implements IBan
         return this.bet;
     }
 
-    @Override
-    public void resolveBet() {
-
-    }
 
     @Override
     public Hand<FrenchICard> compareHand() {
@@ -43,10 +39,12 @@ public class BlackJackIPlayer extends SimpleIPlayer<FrenchICard> implements IBan
         bjHand.addCard(card);
     }
 
+    @Override
     public int getBank(){
         return this.bank;
     }
 
+    @Override
     public void setBank(int newBank){
         this.bank = newBank;
     }

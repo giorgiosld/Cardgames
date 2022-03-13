@@ -51,12 +51,11 @@ public interface IGameTable<T extends SimpleICard<? extends IRank, ? extends ISu
     int getNumberPlayer();
 
 
-//    /**
-//     * Metodo che inizializza un mazzo all'interno del gioco
-//     *
-//     * @return il tipo di mazzo, pu&ograve; puo ritornare sia mazzo francese che mazzo italiano
-//     */
-//    SimpleIDeck<T> initializeDeck();
+    /**
+     * Metodo che ritorna il mazzo usato
+     *
+     * @return il mazzo usato nel gioco
+     */
     SimpleIDeck<T> getDeck();
 
     /**

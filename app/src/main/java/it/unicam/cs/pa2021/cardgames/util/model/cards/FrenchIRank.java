@@ -1,5 +1,8 @@
 package it.unicam.cs.pa2021.cardgames.util.model.cards;
 
+/**
+ * Enum rappresentante i rank francesi
+ */
 public enum FrenchIRank implements IRank {
 
     TWO(0, "2",2),

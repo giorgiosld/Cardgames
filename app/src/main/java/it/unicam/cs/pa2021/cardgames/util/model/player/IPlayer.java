@@ -2,6 +2,8 @@ package it.unicam.cs.pa2021.cardgames.util.model.player;
 
 /**
  * Interfaccia rappresentante un generico giocatore di un gioco di carte
+ *
+ * @param <T> si riferisce al tipo di carte giocabili
  */
 public interface IPlayer<T> {
 
@@ -24,7 +26,7 @@ public interface IPlayer<T> {
      *
      * @param card la carta da aggiungere
      */
-    public void addCardToHand(T card);
+    void addCardToHand(T card);
 
     /**
      * Metodo che permette di prendere una carta dalla mano
@@ -41,5 +43,8 @@ public interface IPlayer<T> {
      */
     T removeCard();
 
+    /**
+     * Metodo che permette la pulizia della mano del giocatore
+     */
     void clearHand();
 }

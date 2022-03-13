@@ -20,14 +20,25 @@ public interface IBanker<T extends SimpleICard<? extends IRank, ? extends ISuit>
      */
     int getBet();
 
-    /**
-     * da controllare dopo su github
-     */
-    void resolveBet();
 
     /**
-     * da controllare dopo su github
+     * Metodo che permette la restituzione di una mano
+     *
+     * @return la mano del giocatore
      */
     Hand<T> compareHand();
 
+    /**
+     * Metodo che permette di visualizzare i fondi del giocatore
+     *
+     * @return i fondi del giocatore
+     */
+    int getBank();
+
+    /**
+     * Metodo che permette il settaggio di un nuovo per un giocatore
+     *
+     * @param newBank il nuovo fondo da settare
+     */
+    void setBank(int newBank);
 }

@@ -4,6 +4,13 @@ import it.unicam.cs.pa2021.cardgames.util.model.cards.IRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;
 
+import java.util.List;
+
+/**
+ * Interfaccia che rappresenta una generica mano di un player
+ *
+ * @param <T> la tipologia di carte contenute nella mano
+ */
 public interface IHand <T extends SimpleICard<? extends IRank, ? extends ISuit>>{
 
     /**
@@ -25,4 +32,23 @@ public interface IHand <T extends SimpleICard<? extends IRank, ? extends ISuit>>
      * @return la carta rimossa
      */
     T removeCard();
+
+    /**
+     * Metodo che permette il ritorno delle carte contenute nella mano
+     *
+     * @return le carte contenute nella mano
+     */
+    List<T> getCards();
+
+    /**
+     * Metodo che rimuove tutte le carte dalla mano
+     */
+    void removeCards();
+
+    /**
+     * Metodo che permette di tornare il numero di carte in mano
+     *
+     * @return il numero di carte nella mano
+     */
+    int numCardsHand();
 }

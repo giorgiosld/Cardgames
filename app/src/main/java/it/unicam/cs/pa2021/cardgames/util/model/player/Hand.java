@@ -30,15 +30,18 @@ public class Hand<T extends SimpleICard<? extends IRank, ? extends ISuit>> imple
         return cardsInHand.remove(0);
     }
 
+    @Override
     public List<T> getCards(){
         return this.cardsInHand;
     }
 
+    @Override
     public void removeCards(){
         List<T> cardsToRemove = this.cardsInHand;
         this.cardsInHand.removeAll(cardsToRemove);
     }
 
+    @Override
     public int numCardsHand(){
         return this.cardsInHand.size();
     }
