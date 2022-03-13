@@ -42,6 +42,7 @@ public class App {
         }
         for(BlackJackIPlayer bjp : bjTable.getPlayers())
             System.out.println("Partita terminata con "+bjp.getNome()+" avente "+bjp.getBank()+" coin");
+
     }
 }
 
