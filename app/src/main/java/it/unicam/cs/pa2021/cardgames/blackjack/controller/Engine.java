@@ -147,7 +147,7 @@ public class Engine implements IGameWinner, IEngine<BlackJackIPlayer> {
         bjd.addCardBanco(card);
     }
 
-    public BlackJackTable getBj() {
+    public BlackJackTable getBjTable() {
         return bj;
     }
 

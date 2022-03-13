@@ -24,10 +24,10 @@ public class SimpleIEngineTest {
         bjTable.addDealer(dealer);
         Engine gioco = new Engine(bjTable);
         gioco.clearHand();
-        assertEquals(bjTable.getDeck(), gioco.getBj().getDeck());
+        assertEquals(bjTable.getDeck(), gioco.getBjTable().getDeck());
         gioco.shuffleDeck();
-        assertEquals(bjTable.getDeck(), gioco.getBj().getDeck());
+        assertEquals(bjTable.getDeck(), gioco.getBjTable().getDeck());
         gioco.dealCards();
-        assertEquals(gioco.getBj().getPlayers().get(0).compareHand().numCardsHand(), 2);
+        assertEquals(gioco.getBjTable().getPlayers().get(0).compareHand().numCardsHand(), 2);
     }
 }
