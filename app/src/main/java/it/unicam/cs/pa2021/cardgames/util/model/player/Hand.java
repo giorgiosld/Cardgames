@@ -38,4 +38,8 @@ public class Hand<T extends SimpleICard<? extends IRank, ? extends ISuit>> imple
         List<T> cardsToRemove = this.cardsInHand;
         this.cardsInHand.removeAll(cardsToRemove);
     }
+
+    public int numCardsHand(){
+        return this.cardsInHand.size();
+    }
 }

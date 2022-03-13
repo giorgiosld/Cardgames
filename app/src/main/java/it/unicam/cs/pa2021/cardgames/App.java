@@ -30,16 +30,12 @@ public class App {
         String restart = "yes";
         while(restart.equals("yes") || (restart.equals("1"))){
             Engine gioco = new Engine(bjTable);
-            gioco.clearHand(bjTable);
-            gioco.shuffleDeck(bjTable);
-            try {
-                gioco.askBet(bjTable);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            gioco.dealCards(bjTable);
-            gioco.makeChoise(bjTable);
-            gioco.evaluateWinner(bjTable);
+            gioco.clearHand();
+            gioco.shuffleDeck();
+            gioco.askBet();
+            gioco.dealCards();
+            gioco.makeChoise();
+            gioco.evaluateWinner();
             System.out.println("Vuoi rigiocare una partita? 1-yes 2-no");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             restart = reader.readLine();

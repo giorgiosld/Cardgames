@@ -4,6 +4,7 @@ import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackDealer;
 import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIDeck;
 import it.unicam.cs.pa2021.cardgames.blackjack.model.BlackJackIPlayer;
 import it.unicam.cs.pa2021.cardgames.blackjack.view.BlackJackTable;
+import it.unicam.cs.pa2021.cardgames.util.controller.IEngine;
 import it.unicam.cs.pa2021.cardgames.util.controller.winner.IGameWinner;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.Face;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Engine implements IGameWinner<BlackJackTable> {
+public class Engine implements IGameWinner, IEngine<BlackJackIPlayer> {
 
     BlackJackTable bj;
     BlackJackIDeck deck;
@@ -26,13 +27,14 @@ public class Engine implements IGameWinner<BlackJackTable> {
         noMoreAction = new ArrayList<>();
     }
 
-    public void shuffleDeck(BlackJackTable bj){
+    @Override
+    public void shuffleDeck(){
         BlackJackDealer dealer = bj.getDealer();
         deck = bj.getDeck();
         deck = dealer.shuffle(deck);
     }
 
-    public void askBet(BlackJackTable bjTable) throws IOException {
+    public void askBet() throws IOException {
         List<BlackJackIPlayer> players = bj.getPlayers();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         for (BlackJackIPlayer bjp: players){
@@ -48,9 +50,10 @@ public class Engine implements IGameWinner<BlackJackTable> {
         }
     }
 
-    public void dealCards(BlackJackTable bjTable) {
+    @Override
+    public void dealCards() {
         List<BlackJackIPlayer> players = bj.getPlayers();
-        BlackJackDealer bjDealer = bjTable.getDealer();
+        BlackJackDealer bjDealer = bj.getDealer();
         for (BlackJackIPlayer bjp : players){
             FrenchICard firstCard= bjDealer.delOneCard(deck);
             this.turnCard(firstCard, bjp);
@@ -65,7 +68,8 @@ public class Engine implements IGameWinner<BlackJackTable> {
         System.out.println("dealer "+bjDealer.getNome()+" ha ottenuto "+cardToShow.getRank().get().getBjValue()+"  e *carta Nascosta* con valore "+cardToShow.getRank().get().getBjValue());
     }
 
-    public void makeChoise(BlackJackTable bjTable) throws IOException {
+    @Override
+    public void makeChoise() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while(!noMoreAction.containsAll(bj.getPlayers())) {
             for (BlackJackIPlayer bjp : bj.getPlayers()) {
@@ -80,7 +84,8 @@ public class Engine implements IGameWinner<BlackJackTable> {
         }
     }
 
-    private void resolveAction(int action, BlackJackIPlayer bjp) {
+    @Override
+    public void resolveAction(int action, BlackJackIPlayer bjp) {
         switch (action){
             case 1:
                 System.out.println("giocatore "+bjp.getNome()+" ha deciso di stare");
@@ -99,16 +104,16 @@ public class Engine implements IGameWinner<BlackJackTable> {
     }
 
     @Override
-    public void evaluateWinner(BlackJackTable bjTable) {
-        List<FrenchICard> carteBanco = bjTable.getDealer().getBanco().getCards();
-        System.out.println("Dealer "+bjTable.getDealer().getNome()+" ha come carte: ");
+    public void evaluateWinner() {
+        List<FrenchICard> carteBanco = bj.getDealer().getBanco().getCards();
+        System.out.println("Dealer "+bj.getDealer().getNome()+" ha come carte: ");
         int valueBanco = bj.getGame().calculateHand(carteBanco);
         for(FrenchICard card: carteBanco){
             System.out.println(card.getRank().get().getBjValue());
         }
         System.out.println("Con valore di: "+valueBanco);
         for (BlackJackIPlayer bjp : bj.getPlayers()){
-            int valueBjp = bjTable.getGame().calculateHand(bjp.compareHand().getCards());
+            int valueBjp = bj.getGame().calculateHand(bjp.compareHand().getCards());
             if((valueBjp > valueBanco) && (valueBjp <= 21)){
                 System.out.println("Giocatore "+bjp.getNome()+" vince contro banco!");
                 bjp.setBank(bjp.getBank()+(bjp.getBet()*2));
@@ -116,19 +121,20 @@ public class Engine implements IGameWinner<BlackJackTable> {
         }
     }
 
+    @Override
+    public void clearHand(){
+        List<BlackJackIPlayer>players = bj.getPlayers();
+        for(BlackJackIPlayer bjp : players){
+            bjp.clearHand();
+        }
+        bj.getDealer().clearHand();
+    }
+
     private void printValue(BlackJackIPlayer bjp){
         Stream<FrenchICard> cardsInMano = bjp.compareHand().getCards().stream();
         System.out.println("giocatore "+bjp.getNome()+" ha: ");
         cardsInMano.forEach(s -> System.out.println(s.getRank().get().getBjValue()));
         System.out.println("Con valore totale di " + bj.getGame().calculateHand(bjp.compareHand().getCards()));
-    }
-
-    public void clearHand(BlackJackTable bjTable){
-        List<BlackJackIPlayer>players = bjTable.getPlayers();
-        for(BlackJackIPlayer bjp : players){
-            bjp.clearHand();
-        }
-        bjTable.getDealer().clearHand();
     }
 
     private void turnCard(FrenchICard card, BlackJackIPlayer bjp){
@@ -139,5 +145,13 @@ public class Engine implements IGameWinner<BlackJackTable> {
     private void turnCardDealer(FrenchICard card, BlackJackDealer bjd){
         card.setFace(Face.UP);
         bjd.addCardBanco(card);
+    }
+
+    public BlackJackTable getBj() {
+        return bj;
+    }
+
+    public BlackJackIDeck getDeck() {
+        return deck;
     }
 }

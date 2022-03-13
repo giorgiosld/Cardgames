@@ -6,12 +6,12 @@ import it.unicam.cs.pa2021.cardgames.util.model.player.SimpleIPlayer;
 
 import java.util.List;
 
-public interface IGameWinner <T extends SimpleIGameTable> {
+public interface IGameWinner  {
 
     /**
      * Metodo che decreterà il vincitore della mano
      *
      * @param table il tavolo da cui estrarre il vincitore
      */
-    void evaluateWinner(T table);
+    void evaluateWinner();
 }
