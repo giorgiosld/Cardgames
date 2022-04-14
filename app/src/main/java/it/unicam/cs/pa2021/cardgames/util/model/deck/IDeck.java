@@ -1,6 +1,7 @@
 package it.unicam.cs.pa2021.cardgames.util.model.deck;
 
 
+import it.unicam.cs.pa2021.cardgames.util.model.cards.ICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.IRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @param <T> il tipo parametrico per le carte contenute nel mazzo
  */
-public interface IDeck<T extends SimpleICard<? extends IRank, ? extends ISuit>> {
+public interface IDeck<T extends ICard<? extends IRank,? extends ISuit>> {
 
 
 

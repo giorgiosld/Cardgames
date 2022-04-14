@@ -1,5 +1,6 @@
 package it.unicam.cs.pa2021.cardgames.util.model.game;
 
+import it.unicam.cs.pa2021.cardgames.util.model.cards.ICard;
 import it.unicam.cs.pa2021.cardgames.util.model.deck.SimpleIDeck;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.IRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
@@ -10,7 +11,7 @@ import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;
  *
  * @param <T> il tipo parametrico per le carte contenute nel mazzoì
  */
-public interface IGame<T extends SimpleICard<? extends IRank, ? extends ISuit>, Q extends SimpleIDeck<T>> {
+public interface IGame<T extends ICard<? extends IRank, ? extends ISuit>, Q extends SimpleIDeck<T>> {
 
 
     /**

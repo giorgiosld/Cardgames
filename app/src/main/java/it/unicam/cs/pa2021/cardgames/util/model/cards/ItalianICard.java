@@ -21,7 +21,7 @@ public class ItalianICard extends SimpleICard<ItalianIRank, ItalianISuit> implem
     }
 
     @Override
-    public ItalianISuit getSuit() {
+    public ISuit getSuit() {
         return this.italianSuit;
     }
 }

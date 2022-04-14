@@ -1,5 +1,6 @@
 package it.unicam.cs.pa2021.cardgames.util.model.player;
 
+import it.unicam.cs.pa2021.cardgames.util.model.cards.ICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.IRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
@@ -11,7 +12,7 @@ import it.unicam.cs.pa2021.cardgames.util.model.deck.SimpleIDeck;
  * @param <P> la tipologia di carte
  * @param <T> la tipologia del mazzo
  */
-public interface IDealer<P extends SimpleICard<? extends IRank, ? extends ISuit>,T extends SimpleIDeck<P>> {
+public interface IDealer<P extends ICard<? extends IRank, ? extends ISuit>,T extends SimpleIDeck<P>> {
 
     /**
      * Mischa il mazzo

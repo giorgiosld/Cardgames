@@ -1,5 +1,6 @@
 package it.unicam.cs.pa2021.cardgames.util.model.deck;
 
+import it.unicam.cs.pa2021.cardgames.util.model.cards.ICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.IRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
@@ -7,7 +8,7 @@ import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleIDeck<T extends SimpleICard<? extends IRank,? extends ISuit>> implements IDeck<T> {
+public class SimpleIDeck<T extends ICard<? extends IRank,? extends ISuit>> implements IDeck<T> {
 
     public List<T> deck;
 

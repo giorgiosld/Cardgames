@@ -9,6 +9,14 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    //added for fx
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+}
+
+//added for fx
+javafx {
+    version = "18"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 repositories {
@@ -27,7 +35,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'it.unicam.cs.pa2021.cardgames.App'
+    mainClass = 'it.unicam.cs.pa2021.cardgames.MainFX'
 }
 
 run{

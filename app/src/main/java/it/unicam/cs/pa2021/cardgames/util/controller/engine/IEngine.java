@@ -1,8 +1,10 @@
 package it.unicam.cs.pa2021.cardgames.util.controller.engine;
 
+import it.unicam.cs.pa2021.cardgames.util.model.cards.ICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.IRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
+import it.unicam.cs.pa2021.cardgames.util.model.player.IPlayer;
 import it.unicam.cs.pa2021.cardgames.util.model.player.SimpleIPlayer;
 
 import java.io.IOException;
@@ -12,7 +14,7 @@ import java.io.IOException;
  *
  * @param <T> tipo di giocatore quale gioca al gioco
  */
-public interface IEngine<T extends SimpleIPlayer<? extends SimpleICard<? extends IRank, ? extends ISuit>>> {
+public interface IEngine<T extends IPlayer<? extends ICard<? extends IRank, ? extends ISuit>>> {
 
     /**
      * Metodo che permette il mischiaggio del mazzo all'inizio del gioco

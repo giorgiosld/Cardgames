@@ -19,7 +19,7 @@ public interface ICard<T,P> {
     /**
      * Metodo che ritorna il seme della carta
      */
-    P getSuit();
+    ISuit getSuit();
 
     /**
      * Metodo che setta la faccia della carta

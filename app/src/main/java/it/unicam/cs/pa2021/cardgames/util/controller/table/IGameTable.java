@@ -1,5 +1,7 @@
 package it.unicam.cs.pa2021.cardgames.util.controller.table;
 
+import it.unicam.cs.pa2021.cardgames.util.model.cards.ICard;
+import it.unicam.cs.pa2021.cardgames.util.model.player.IPlayer;
 import it.unicam.cs.pa2021.cardgames.util.model.player.SimpleIPlayer;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.IRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.SimpleICard;
@@ -13,7 +15,7 @@ import java.util.List;
  *
  * @param <T> la tipologia di carte ammesse nel tavolo
  */
-public interface IGameTable<T extends SimpleICard<? extends IRank, ? extends ISuit>, P extends SimpleIPlayer<? extends SimpleICard<? extends IRank, ? extends ISuit>>> {
+public interface IGameTable<T extends ICard<? extends IRank, ? extends ISuit>, P extends IPlayer<?>> {
 
     /**
      * Metodo che permette il settaggio di un deck all'interno del campo da gioco

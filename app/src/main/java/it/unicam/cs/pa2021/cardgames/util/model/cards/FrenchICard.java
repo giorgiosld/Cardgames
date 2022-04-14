@@ -21,7 +21,7 @@ public class FrenchICard extends SimpleICard<FrenchIRank, FrenchISuit> implement
     }
 
     @Override
-    public FrenchISuit getSuit() {
+    public ISuit getSuit() {
         return this.frenchSuit;
     }
 }
