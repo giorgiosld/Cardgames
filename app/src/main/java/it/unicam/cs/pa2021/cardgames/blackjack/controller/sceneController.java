@@ -14,12 +14,10 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
+import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class sceneController {
 
@@ -81,15 +79,36 @@ public class sceneController {
         if((betting <= bank)){
             myBank.setText(Integer.toString(bank-betting));
             betField.setText("InsertBet");
-            //showCards();
+            showCards();
         }else if(bank != 0){
             Alert alert = new Alert(Alert.AlertType.ERROR, "Inserire un bet minore rispetto al valore del bank");
             alert.showAndWait();
         }
     }
 
-    public void showCards(){
-        
+    private void showCards() throws IOException {
+        Image imageHidden = new Image("frenchCards/cartaGirata.jpeg");
+        hideCard.setImage(imageHidden);
+        Image cardB = new Image("frenchCards/"+randomString()+"/"+randomInt()+".png");
+        cardBanco.setImage(cardB);
+        Image player1 = new Image("frenchCards/"+randomString()+"/"+randomInt()+".png");
+        cardPlayer.setImage(player1);
+        Image player2 = new Image("frenchCards/"+randomString()+"/"+randomInt()+".png");
+        cardPlayer2.setImage(player2);
+        //cardBanco.setImage();
     }
+
+    private String randomInt() {
+        List<String> givenList = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13");
+        Random rand = new Random();
+        return givenList.get(rand.nextInt(givenList.size()));
+    }
+
+    private String randomString() {
+        List<String> givenList = Arrays.asList("clubs", "diamonds", "hearts", "spades");
+        Random rand = new Random();
+        return givenList.get(rand.nextInt(givenList.size()));
+    }
+
 
 }

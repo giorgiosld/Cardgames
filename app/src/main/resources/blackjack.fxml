@@ -10,7 +10,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.pa2021.cardgames.blackjack.controller.sceneController">
    <children>
-      <AnchorPane prefHeight="525.0" prefWidth="904.0" style="-fx-background-image: /home/giorgiosld/università/ProgrammazioneAvanzata/Cardgames/app/src/main/resources/tableblackjack.jpg.png;">
+      <AnchorPane prefHeight="525.0" prefWidth="904.0" >
          <children>
             <ImageView fitHeight="524.0" fitWidth="904.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                <image>
