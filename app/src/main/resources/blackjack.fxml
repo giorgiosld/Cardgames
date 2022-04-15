@@ -10,7 +10,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.pa2021.cardgames.blackjack.controller.sceneController">
    <children>
-      <AnchorPane prefHeight="525.0" prefWidth="904.0" >
+      <AnchorPane prefHeight="525.0" prefWidth="904.0">
          <children>
             <ImageView fitHeight="524.0" fitWidth="904.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -21,12 +21,12 @@
             <Label layoutX="211.0" layoutY="520.0" text="Bet" />
             <Label layoutX="580.0" layoutY="519.0" text="Bank" />
             <TextField fx:id="betField" layoutX="244.0" layoutY="515.0" prefHeight="26.0" prefWidth="78.0" promptText="InsertBet" />
-            <Button layoutX="839.0" layoutY="515.0" mnemonicParsing="false" text="Carta" />
-            <Button layoutX="774.0" layoutY="515.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" text="Stai" />
+            <Button layoutX="839.0" layoutY="515.0" mnemonicParsing="false" onAction="#carta" text="Carta" />
+            <Button layoutX="774.0" layoutY="515.0" mnemonicParsing="false" onAction="#stai" prefHeight="26.0" prefWidth="50.0" text="Stai" />
             <Button layoutX="330.0" layoutY="515.0" mnemonicParsing="false" onAction="#addBet" text="SetValue" />
             <Label fx:id="myBank" layoutX="625.0" layoutY="519.0" prefHeight="18.0" prefWidth="50.0" text="100" />
             <ImageView fx:id="cardPlayer" fitHeight="150.0" fitWidth="200.0" layoutX="232.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="cardPlayer2" fitHeight="150.0" fitWidth="200.0" layoutX="518.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="cardPlayer2" fitHeight="150.0" fitWidth="200.0" layoutX="322.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="hideCard" fitHeight="150.0" fitWidth="200.0" layoutX="244.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="cardBanco" fitHeight="150.0" fitWidth="200.0" layoutX="511.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" />
          </children>

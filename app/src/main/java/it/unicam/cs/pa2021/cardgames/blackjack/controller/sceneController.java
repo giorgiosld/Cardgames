@@ -111,4 +111,17 @@ public class sceneController {
     }
 
 
+    public void carta(ActionEvent event) {
+        //ImageView newCard = new ImageView();
+        //newCard.s
+        //lavorare con layoutX e Y per la zona dove spammare le img
+        //controllare il layout della crate del banco
+        //bindare valore enum delle carte con quelle delle immagini
+        //metodo decretavincitore
+    }
+
+    public void stai(ActionEvent event) {
+        Image imageNotHidden = new Image("frenchCards/"+randomString()+"/"+randomInt()+".png");
+        hideCard.setImage(imageNotHidden);
+    }
 }
