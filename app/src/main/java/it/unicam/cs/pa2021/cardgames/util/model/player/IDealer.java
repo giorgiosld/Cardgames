@@ -41,5 +41,5 @@ public interface IDealer<P extends ICard<? extends IRank, ? extends ISuit>,T ext
      *
      * @return la lista di carte contenute
      */
-    Hand<P> getBanco();
+    IHand<P> getBanco();
 }

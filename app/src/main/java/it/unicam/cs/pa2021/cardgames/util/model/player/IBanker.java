@@ -27,7 +27,7 @@ public interface IBanker<T extends ICard<? extends IRank, ? extends ISuit>> {
      *
      * @return la mano del giocatore
      */
-    Hand<T> compareHand();
+    IHand<T> compareHand();
 
     /**
      * Metodo che permette di visualizzare i fondi del giocatore

@@ -3,11 +3,12 @@ package it.unicam.cs.pa2021.cardgames.blackjack.model;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
 import it.unicam.cs.pa2021.cardgames.util.model.player.Hand;
 import it.unicam.cs.pa2021.cardgames.util.model.player.IBanker;
+import it.unicam.cs.pa2021.cardgames.util.model.player.IHand;
 import it.unicam.cs.pa2021.cardgames.util.model.player.SimpleIPlayer;
 
 public class BlackJackIPlayer extends SimpleIPlayer<FrenchICard> implements IBanker<FrenchICard> {
 
-    private final Hand<FrenchICard> bjHand;
+    private final IHand<FrenchICard> bjHand;
     private int bank;
     private int bet;
 
@@ -30,7 +31,7 @@ public class BlackJackIPlayer extends SimpleIPlayer<FrenchICard> implements IBan
 
 
     @Override
-    public Hand<FrenchICard> compareHand() {
+    public IHand<FrenchICard> compareHand() {
         return this.bjHand;
     }
 

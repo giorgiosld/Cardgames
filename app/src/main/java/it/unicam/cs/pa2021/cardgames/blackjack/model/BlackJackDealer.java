@@ -3,11 +3,12 @@ package it.unicam.cs.pa2021.cardgames.blackjack.model;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
 import it.unicam.cs.pa2021.cardgames.util.model.player.Hand;
 import it.unicam.cs.pa2021.cardgames.util.model.player.IDealer;
+import it.unicam.cs.pa2021.cardgames.util.model.player.IHand;
 import it.unicam.cs.pa2021.cardgames.util.model.player.SimpleIPlayer;
 
 public class BlackJackDealer extends SimpleIPlayer<FrenchICard> implements IDealer<FrenchICard, BlackJackIDeck> {
 
-    private final Hand<FrenchICard> banco;
+    private final IHand<FrenchICard> banco;
 
     public BlackJackDealer(String nome, int id){
         super(nome, id);
@@ -32,7 +33,7 @@ public class BlackJackDealer extends SimpleIPlayer<FrenchICard> implements IDeal
     }
 
     @Override
-    public Hand<FrenchICard> getBanco() {
+    public IHand<FrenchICard> getBanco() {
         return this.banco;
     }
 

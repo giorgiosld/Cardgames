@@ -5,6 +5,7 @@ import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchICard;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchIRank;
 import it.unicam.cs.pa2021.cardgames.util.model.cards.FrenchISuit;
 import it.unicam.cs.pa2021.cardgames.util.model.player.Hand;
+import it.unicam.cs.pa2021.cardgames.util.model.player.IHand;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,8 +56,8 @@ public class sceneController {
     private static int x=0;
     private final static int padding = 90;
     private static final List<ImageView> handPlayerGui = new ArrayList<>();
-    private static final Hand<FrenchICard> handPlayer = new Hand<>();
-    private static final Hand<FrenchICard> handBanco = new Hand<>();
+    private static final IHand<FrenchICard> handPlayer = new Hand<>();
+    private static final IHand<FrenchICard> handBanco = new Hand<>();
     private int myBet;
 
 
@@ -83,6 +84,7 @@ public class sceneController {
     }
 
     public void addBet(ActionEvent event) throws IOException{
+        anchor.getChildren().removeAll(handPlayerGui.stream().toList());
         int bank = Integer.parseInt(myBank.getText().isEmpty() ? "0" : myBank.getText());
         if(bank == 0){
             Alert alert = new Alert(Alert.AlertType.ERROR, "Non puoi continuare a giocare senza bet. Ricomincia una nuova partita");
@@ -100,7 +102,6 @@ public class sceneController {
             alert.showAndWait();
         }
         if((myBet <= bank)){
-            anchor.getChildren().removeAll(handPlayerGui.stream().toList());
             myBank.setText(Integer.toString(bank-myBet));
             betField.setText("InsertBet");
             betField.setDisable(true);
@@ -130,7 +131,7 @@ public class sceneController {
         return getImage(handPlayer);
     }
 
-    private Image getImage(Hand<FrenchICard> hand) {
+    private Image getImage(IHand<FrenchICard> hand) {
         String suit = randomString();
         String rank = randomInt();
         FrenchICard card = new FrenchICard(FrenchIRank.valueOf(rank), FrenchISuit.valueOf(suit));

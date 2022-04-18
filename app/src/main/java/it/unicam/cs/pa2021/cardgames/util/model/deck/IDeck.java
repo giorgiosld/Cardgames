@@ -9,11 +9,11 @@ import it.unicam.cs.pa2021.cardgames.util.model.cards.ISuit;
 import java.util.List;
 
 /**
- * Interfaccia usata per rappresentare un generico mazzo su un tavolo da gioco
+ * Interfaccia usata per rappresentare un generico mazzo
  *
  * @param <T> il tipo parametrico per le carte contenute nel mazzo
  */
-public interface IDeck<T extends ICard<? extends IRank,? extends ISuit>> {
+public interface IDeck<T extends ICard<? extends IRank,? extends ISuit>> extends IBunch{
 
 
 
@@ -61,10 +61,10 @@ public interface IDeck<T extends ICard<? extends IRank,? extends ISuit>> {
      */
     List<T> removeCards(List<T> cards);
 
-    /**
-     * Metodo che torna le carte contenute nel mazzo
-     *
-     * @return le carte contenute nel mazzo
-     */
-    List<T> getCards();
+//    /**
+//     * Metodo che torna le carte contenute nel mazzo
+//     *
+//     * @return le carte contenute nel mazzo
+//     */
+//    List<T> getCards();
 }
